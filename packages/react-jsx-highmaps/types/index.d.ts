@@ -38,15 +38,18 @@ export function MapBubbleSeries(
 type MapNavigatorProps = {
   children?: ReactNode;
 } & Partial<Highcharts.MapNavigationOptions>;
+
 export function MapNavigator(props: MapNavigatorProps): ReactElement;
 export namespace MapNavigator {
   type ZoomButtonProps<TButtonProps> = { children?: ReactNode } & Omit<
     TButtonProps,
     'text'
   >;
+
   export function ZoomIn(
     props: ZoomButtonProps<Highcharts.MapNavigationButtonsZoomInOptions>
   ): ReactElement;
+
   export function ZoomOut(
     props: ZoomButtonProps<Highcharts.MapNavigationButtonsZoomOutOptions>
   ): ReactElement;
