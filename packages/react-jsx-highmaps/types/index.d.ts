@@ -56,14 +56,14 @@ export namespace MapNavigator {
 }
 
 // Axis components
-type AxisProps = {
-  endOnTick: boolean;
-  visible: boolean;
-  minPadding: number;
-  maxPadding: number;
-  startOnTick: boolean;
-  reversed: boolean;
-} & Highcharts.AxisOptions;
+type AxisProps<TAxisOptions> = {
+  endOnTick?: boolean;
+  visible?: boolean;
+  minPadding?: number;
+  maxPadding?: number;
+  startOnTick?: boolean;
+  reversed?: boolean;
+} & Partial<TAxisOptions>;
 
-export function XAxis(props: AxisProps): ReactElement;
-export function YAxis(props: AxisProps): ReactElement;
+export function XAxis(props: AxisProps<Highcharts.XAxisOptions>): ReactElement;
+export function YAxis(props: AxisProps<Highcharts.YAxisOptions>): ReactElement;
