@@ -1,7 +1,11 @@
 import type * as Highcharts from 'highcharts';
 import type { ReactElement, ReactNode } from 'react';
 import * as React from 'react';
-import type { HighchartsChartProps, SeriesProps } from 'react-jsx-highcharts';
+import type {
+  HighchartsChartProps,
+  SeriesProps,
+  AxisProps
+} from 'react-jsx-highcharts';
 
 export * from 'react-jsx-highcharts';
 
@@ -56,14 +60,18 @@ export namespace MapNavigator {
 }
 
 // Axis components
-type AxisProps<TAxisOptions> = {
+type MapAxisProps<TAxisOptions> = {
   endOnTick?: boolean;
   visible?: boolean;
   minPadding?: number;
   maxPadding?: number;
   startOnTick?: boolean;
   reversed?: boolean;
-} & Partial<TAxisOptions>;
+} & AxisProps<TAxisOptions>;
 
-export function XAxis(props: AxisProps<Highcharts.XAxisOptions>): ReactElement;
-export function YAxis(props: AxisProps<Highcharts.YAxisOptions>): ReactElement;
+export function XAxis(
+  props: MapAxisProps<Highcharts.XAxisOptions>
+): ReactElement;
+export function YAxis(
+  props: MapAxisProps<Highcharts.YAxisOptions>
+): ReactElement;
