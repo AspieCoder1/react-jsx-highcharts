@@ -39,8 +39,8 @@ type MapNavigatorProps = {
   children?: ReactNode;
 } & Partial<Highcharts.MapNavigationOptions>;
 
-export function MapNavigator(props: MapNavigatorProps): ReactElement;
-export namespace MapNavigator {
+export function MapNavigation(props: MapNavigatorProps): ReactElement;
+export namespace MapNavigation {
   type ZoomButtonProps<TButtonProps> = { children?: ReactNode } & Omit<
     TButtonProps,
     'text'
