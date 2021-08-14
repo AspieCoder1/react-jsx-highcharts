@@ -1,5 +1,6 @@
 import type * as Highcharts from 'highcharts';
 import type { ReactElement, ReactNode } from 'react';
+import * as React from 'react';
 import type { HighchartsChartProps, SeriesProps } from 'react-jsx-highcharts';
 
 export * from 'react-jsx-highcharts';
@@ -46,4 +47,10 @@ export namespace MapNavigator {
     'text'
   >;
   export function ZoomOut(props: ZoomOutButtonProps): ReactElement;
+
+  type MapButtonProps = {
+    children?: ReactNode;
+    type: 'zoomIn' | 'zoomOut';
+  } & Omit<Highcharts.MapNavigationButtonOptions, 'text'>;
+  export function Button(props: MapButtonProps): ReactElement;
 }
