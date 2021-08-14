@@ -54,3 +54,16 @@ export namespace MapNavigator {
   } & Omit<Highcharts.MapNavigationButtonOptions, 'text'>;
   export function Button(props: MapButtonProps): ReactElement;
 }
+
+// Axis components
+type AxisProps = {
+  endOnTick: boolean;
+  visible: boolean;
+  minPadding: number;
+  maxPadding: number;
+  startOnTick: boolean;
+  reversed: boolean;
+} & Highcharts.AxisOptions;
+
+export function XAxis(props: AxisProps): ReactElement;
+export function YAxis(props: AxisProps): ReactElement;
